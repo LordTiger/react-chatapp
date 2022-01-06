@@ -47,7 +47,7 @@ const Chats = () => {
             formdata.append('username', user.displayName);
             formdata.append('secret', user.uid);
 
-            getFile(user.photoUrl)
+            getFile(user.photoURL)
                 .then((avatar) => {
                     formdata.append('avatar', avatar, avatar.name)
 
@@ -57,9 +57,9 @@ const Chats = () => {
                     )
                 })
                 .then(() => setLoading(false))
-                .catch((error) => console.log(error)
+                .catch((error) => console.log(error))
         })
-    }, [user, history])
+    }, [user, history]);
 
     if(!user || loading) return 'Loading... ';
 
@@ -76,7 +76,7 @@ const Chats = () => {
 
             <ChatEngine
                 height="calc(100vh - 66px)"
-                projectId="09131f19-64d8-4458-9e17-c281daaeec96"
+                projectID="09131f19-64d8-4458-9e17-c281daaeec96"
                 userName={user.email}
                 userSecret={user.uid}
 
